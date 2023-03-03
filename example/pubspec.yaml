@@ -1,0 +1,25 @@
+name: example
+description: Showcase Arna Response Validation.
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: '>=2.19.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  arna_response_validation:
+    path: ../
+  arna:
+    git: https://github.com/MahanRahmati/Arna.git
+  arna_logger: ^1.0.4
+  arna_web_service: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.1
+
+flutter:
+  uses-material-design: true
