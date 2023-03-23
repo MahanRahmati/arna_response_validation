@@ -251,51 +251,24 @@ enum StatusCode {
   /// The description of HTTP status code.
   final String description;
 
-  /// Get the standardised `reason-phrase` for this status code.
-  String canonicalReason(final StatusCode code) {
-    return code.description;
-  }
-
   /// Check if status is within 100-199.
-  bool isInformational(final StatusCode code) {
-    return 200 > code.code && code.code >= 100;
-  }
+  bool isInformational() => 200 > code && code >= 100;
 
   /// Check if status is within 200-299.
-  bool isSuccess(final StatusCode code) {
-    return 300 > code.code && code.code >= 200;
-  }
+  bool isSuccess() => 300 > code && code >= 200;
 
   /// Check if status is within 300-399.
-  bool isRedirection(final StatusCode code) {
-    return 400 > code.code && code.code >= 300;
-  }
+  bool isRedirection() => 400 > code && code >= 300;
 
   /// Check if status is within 400-499.
-  bool isClientError(final StatusCode code) {
-    return 500 > code.code && code.code >= 400;
-  }
+  bool isClientError() => 500 > code && code >= 400;
 
   /// Check if status is within 500-599.
-  bool isServerError(final StatusCode code) {
-    return 600 > code.code && code.code >= 500;
-  }
+  bool isServerError() => 600 > code && code >= 500;
 
-  /// Get HTTP status code from code
-  static StatusCode getByCode(final int code) {
-    return StatusCode.values.firstWhere((final StatusCode x) => x.code == code);
-  }
-
-  /// Get HTTP status description from code
-  static String getDescriptionByCode(final int code) {
-    return StatusCode.values
-        .firstWhere((final StatusCode x) => x.code == code)
-        .description;
-  }
-
-  /// Throw exception for statuc codes
-  void throwException(final StatusCode statusCode) {
-    switch (statusCode) {
+  /// Throw exception if status code is not successful.
+  void throwException() {
+    switch (this) {
       case StatusCode.OK:
       case StatusCode.CREATED:
       case StatusCode.ACCEPTED:
@@ -308,8 +281,28 @@ enum StatusCode {
       case StatusCode.IM_USED:
         break;
       default:
-        throw Exception(statusCode.toString());
+        throw Exception(toString());
     }
+  }
+
+  /// Get HTTP status code from code
+  static StatusCode? getByCode(final int code) {
+    for (final StatusCode statusCode in StatusCode.values) {
+      if (statusCode.code == code) {
+        return statusCode;
+      }
+    }
+    return null;
+  }
+
+  /// Get HTTP status description from code
+  static String? getDescriptionByCode(final int code) {
+    for (final StatusCode statusCode in StatusCode.values) {
+      if (statusCode.code == code) {
+        return statusCode.description;
+      }
+    }
+    return null;
   }
 
   @override

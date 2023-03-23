@@ -24,7 +24,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.0.1"
+    version: "1.1.0"
   arna_web_service:
     dependency: "direct main"
     description:
