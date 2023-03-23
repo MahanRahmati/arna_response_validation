@@ -22,19 +22,9 @@ class _MyAppState extends State<MyApp> with ArnaWebServiceController {
         Uri.parse('https://api.ipify.org'),
       );
       setState(() => isLoading = false);
-      final body = validateResponse(response);
+      final body = ArnaResponseValidation().getBody(response);
       arnaLogger(title: 'Your IP', data: body);
     }
-  }
-
-  dynamic validateResponse(final Response? response) {
-    final StatusCode? statuscode =
-        ArnaResponseValidation().getStatusCode(response);
-    if (statuscode != null) {
-      arnaLogger(title: 'StatusCode', data: statuscode);
-      return ArnaResponseValidation().getBody(response);
-    }
-    return null;
   }
 
   @override
