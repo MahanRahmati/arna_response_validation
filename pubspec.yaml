@@ -1,7 +1,7 @@
 name: arna_response_validation
 description: Arna Response Validation is a simple and powerful HTTP validator for Flutter.
 homepage: https://github.com/MahanRahmati/arna_response_validation
-version: 1.0.0
+version: 1.0.1
 
 environment:
   sdk: '>=2.19.2 <3.0.0'
@@ -10,7 +10,6 @@ dependencies:
   flutter:
     sdk: flutter
   http: ^0.13.5
-  arna_logger: ^1.0.4
 
 dev_dependencies:
   flutter_test:

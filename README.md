@@ -16,7 +16,7 @@ Add Arna Response Validation as a dependency in your pubspec.yaml:
 
 ```yaml
 dependencies:
-  arna_response_validation: ^1.0.0
+  arna_response_validation: ^1.0.1
 ```
 
 Import it:
@@ -28,7 +28,6 @@ import 'package:arna_response_validation/arna_response_validation.dart';
 Use it!
 
 ```dart
-final ArnaWebService webService = ArnaWebService.service();
 final Response? response = await webService.get(
   Uri.parse('https://api.ipify.org'),
 );
