@@ -13,8 +13,8 @@ dependencies:
     path: ../
   arna:
     git: https://github.com/MahanRahmati/Arna.git
-  arna_logger: ^1.0.5
-  arna_web_service: ^1.1.0
+  arna_logger: ^1.0.7
+  arna_web_service: ^1.3.0
 
 dev_dependencies:
   flutter_test:

@@ -16,7 +16,7 @@ Add Arna Response Validation as a dependency in your pubspec.yaml:
 
 ```yaml
 dependencies:
-  arna_response_validation: ^1.1.0
+  arna_response_validation: ^1.2.0
 ```
 
 Import it:
