@@ -1,3 +1,8 @@
+## 1.3.0
+
+- Refactor library
+- Update to dart 3
+
 ## 1.2.0
 
 - Update dependencies
