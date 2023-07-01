@@ -1,3 +1,7 @@
+## 1.4.0
+
+- Bump http
+
 ## 1.3.0
 
 - Refactor library
